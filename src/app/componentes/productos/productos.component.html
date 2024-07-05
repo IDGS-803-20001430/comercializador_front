@@ -1,0 +1,81 @@
+<div class="headerGeneral">
+    <div class="titulo">
+        <h1>Comercializadora de Vinos y Licores</h1>
+    </div>
+    <div class="subtitulo">
+        <h2>Productos</h2>
+    </div>
+</div>
+<div style="width: 100%; margin-top: 1%; display: flex; flex-direction: column; align-items: center;">
+    <div class="card" style="display: flex; justify-content: center; width: 100%;">
+        <input 
+            type="text" 
+            [(ngModel)]="selectedItem" 
+            (input)="search($event)" 
+            pInputText 
+            style="width: 50%;"/>
+    </div>
+    <div class="card" style="display: flex; justify-content: center; width: 100%; margin-top: 1%;">
+        <div class="flex flex-wrap gap-3" style="display: flex; justify-content: center;">
+            <div class="flex align-items-center" style="margin-left: 10px;">
+                <p-radioButton 
+                    name="categoria" 
+                    value="1" 
+                    [(ngModel)]="ingredient" 
+                    inputId="ingredient1"
+                    (onClick)="filterByCategory(1)" />
+                <label for="ingredient1" class="ml-2" style="margin-left: 5px;">
+                    Vinos
+                </label>
+            </div>
+            
+            <div class="flex align-items-center" style="margin-left: 10px;">
+                <p-radioButton 
+                    name="categoria" 
+                    value="2" 
+                    [(ngModel)]="ingredient" 
+                    inputId="ingredient2"
+                    (onClick)="filterByCategory(2)" />
+                <label for="ingredient2" class="ml-2" style="margin-left: 5px;">
+                    Licores
+                </label>
+            </div>
+            
+            <div class="flex align-items-center" style="margin-left: 10px;">
+                <p-radioButton 
+                    name="categoria" 
+                    value="3" 
+                    [(ngModel)]="ingredient" 
+                    inputId="ingredient3"
+                    (onClick)="filterByCategory(3)" />
+                <label for="ingredient3" class="ml-2" style="margin-left: 5px;">
+                    Cervezas
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div *ngFor="let producto of productosFiltrados; let i = index">
+        <p-card class="product-card">
+            <ng-template pTemplate="header">
+                <img class="cardImg" alt="Card" src="{{producto.imagen}}" />
+            </ng-template>
+            <div class="card-content">
+                <h2>{{producto.nombre}}</h2>
+                <p>{{producto.descripcion}}</p>
+                <p><strong>Precio:</strong> {{producto.precio | currency:'MXN'}}</p>
+            </div>
+        </p-card>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-content">
+        <p><strong>Comercializadora de Vinos y Licores</strong></p>
+        <p>Email de contacto: contacto&#64;vinosylicores.com</p>
+        <p><strong>Teléfono:</strong> +52 55 1234 5678</p>
+    </div>
+</footer>
+

@@ -1,0 +1,35 @@
+<div class="barra-container">
+    <p-sidebar [(visible)]="sidebarVisible">
+      <ng-template pTemplate="header">
+        <div class="flex align-items-center gap-2">
+          <p-avatar 
+            icon="pi pi-user" 
+            styleClass="mr-2" 
+            [style]="{ 'background-color': '#dee9fc', color: '#1a2551' }"
+            size="xlarge" 
+            shape="circle" />
+          <span class="font-bold">
+            Usuario
+          </span>
+        </div>
+      </ng-template>
+      <p-menu class="menu" [model]="items">
+        <ng-template pTemplate="item" let-item>
+            <ng-container *ngIf="item.route; else elseBlock">
+                <a routerLinkActivate="activate" [routerLink]="item.route" class="p-menuitem-link" (click)="sidebarVisible = false">
+                    <span [class]="item.icon" style="margin-right: 10px;"></span>
+                    <span class="ml-2">{{ item.label }}</span>
+                </a>
+            </ng-container>
+            <ng-template #elseBlock>
+                <a [href]="item.url" class="p-menuitem-link">
+                    <span [class]="item.icon"></span>
+                    <span class="ml-2">{{ item.label }}</span>
+                </a>
+            </ng-template>
+        </ng-template>
+    </p-menu>
+    </p-sidebar>
+    <p-button [rounded]="true" severity="contrast" (click)="sidebarVisible = true" icon="pi pi-bars" />
+</div>
+<router-outlet></router-outlet>

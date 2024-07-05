@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+.headerGeneral {
+    width: 100%;
+    height: 100px;
+    background-color: #7b1e1e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.headerGeneral .titulo,
+.headerGeneral .subtitulo {
+    width: 100%;
+    text-align: center;
+}
+
+.headerGeneral h1, 
+.headerGeneral h2 {
+    margin: 0;
+    line-height: 1.5;
+}

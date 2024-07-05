@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { compartidoModule } from './componentes/compartido/compartido.module';
+import { InicioModule } from './componentes/inicio/inicio.module';
+import { ProductosModule } from './componentes/productos/productos.module';
+import { ContactoModule } from './componentes/contacto/contacto.module';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [compartidoModule, InicioModule, ProductosModule, ContactoModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

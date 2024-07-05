@@ -1,0 +1,50 @@
+.banner {
+    padding: 1%;
+    text-align: center;
+}
+
+.imgBanner {
+    width: 70%;
+    height: 180px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.product-card {
+    flex: 1 1 calc(25% - 20px);
+    box-sizing: border-box;
+    max-width: 300px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cardImg {
+    width: 35%;
+    height: auto;
+    max-height: 130px;
+}
+
+.footer {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.footer-content {
+    padding: 10px;
+}
+
+.footer p {
+    margin: 5px 0;
+}

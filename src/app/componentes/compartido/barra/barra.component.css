@@ -1,0 +1,15 @@
+.barra-container {
+    position: fixed;
+    top: 2%;
+    left: 2%;
+    z-index: 1000;
+  }
+
+  ::ng-deep .p-component-overlay {
+    z-index: 0 !important;
+  }
+
+  ::ng-deep .menu .p-component {
+    border: none;
+  }
+  

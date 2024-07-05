@@ -1,0 +1,35 @@
+<div class="headerGeneral">
+    <div class="titulo">
+        <h1>Comercializadora de Vinos y Licores</h1>
+    </div>
+    <div class="subtitulo">
+        <h2>Inicio</h2>
+    </div>
+</div>
+
+<div class="banner">
+    <img class="imgBanner" src="assets/img/banner.png" alt="Banner">
+</div>
+
+<div class="content">
+    <div *ngFor="let producto of productoslst; let i = index">
+        <p-card class="product-card">
+            <ng-template pTemplate="header">
+                <img class="cardImg" alt="Card" src="{{producto.imagen}}" />
+            </ng-template>
+            <div class="card-content">
+                <h2>{{producto.nombre}}</h2>
+                <p>{{producto.descripcion}}</p>
+                <p><strong>Precio:</strong> {{producto.precio | currency:'MXN'}}</p>
+            </div>
+        </p-card>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-content">
+        <p><strong>Comercializadora de Vinos y Licores</strong></p>
+        <p>Email de contacto: contacto&#64;vinosylicores.com</p>
+        <p><strong>Teléfono:</strong> +52 55 1234 5678</p>
+    </div>
+</footer>
